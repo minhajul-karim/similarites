@@ -44,3 +44,9 @@ span
 {
     background-color: #ff0;
 }
+
+/*Bring back radio buttons inside container-fluid radio buttons*/
+.form-check-input
+{
+    margin-left: 0px;
+}

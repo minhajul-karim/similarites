@@ -2,12 +2,49 @@
 
 {% block body %}
 
-    <div class="col">
-        <form action="/compare" enctype="multipart/form-data" method="post">
+<div class="col">
+	<form action="/compare" enctype="multipart/form-data" method="post" class="md-form" onsubmit="">
+		
+		<!-- File input for 1st file -->
+		<div class="form-group">
+			<label for="one">Select 1st file</label>
+			<input type="file" class="form-control-file" id="one" name="file">
+		</div>
+		
+		<!-- File input for 1st file -->
+		<div class="form-group">
+			<label for="two">Select 2nd file</label>
+			<input type="file" class="form-control-file" id="two">
+		</div>
 
-            <!-- TODO -->
+		<!-- Radio Buttons start -->
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="lines" checked="checked">
+			<label class="form-check-label" for="exampleRadios1">
+				Compare lines
+			</label>
+		</div>
+		
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="sentences">
+			<label class="form-check-label" for="exampleRadios2">
+				Compare sentences
+			</label>
+		</div>
+		
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="substrings">
+			<label class="form-check-label" for="exampleRadios3">
+				Compare substrings
+				<input type="number" class="form-control" id="exampleInputNum" placeholder="Length of substring" min="0">
+			</label>
+		</div>
+		<!-- Radio buttons end -->
 
-        </form>
-    </div>
+		<!-- Submit button -->
+		<button type="submit" class="btn btn-primary" id="five" onclick="">Submit</button>
+	</form>
+</div>
 
 {% endblock %}
+			
