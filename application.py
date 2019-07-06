@@ -46,6 +46,7 @@ def compare():
         abort(400, "missing algorithm")
     elif request.form.get("algorithm") == "lines":
         regexes = [f"^{re.escape(match)}$" for match in lines(file1, file2)]
+		# regexes = ["^{}$" for match in lines(file1, file2)].format(re.escape(match))
     elif request.form.get("algorithm") == "sentences":
         regexes = [re.escape(match) for match in sentences(file1, file2)]
     elif request.form.get("algorithm") == "substrings":
@@ -125,6 +126,7 @@ def highlight(s, regexes):
         escaped = escape(s[start:end])
         if highlighted:
             result += f"<span>{escaped}</span>"
+            # result += "<span>{}</span>".format(escaped)
         else:
             result += escaped
     return result
